@@ -1,1 +1,1 @@
-# eduhackathon
+Eduhackathon
