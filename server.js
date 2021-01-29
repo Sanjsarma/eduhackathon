@@ -6,14 +6,16 @@ const passport = require('passport');
 const flash=require('connect-flash');
 const session=require('express-session');
 var Strategy = require('passport-local').Strategy;
+var dashboard = require('./routes/userdashboard');
 
 const app=express();
 const conn=mysql.createConnection({
     host:'localhost',
     user: 'root',
-    password: '',
+    password: '12345',
     database: 'eduhack'
 })
+app.use(express.static('public'));
 
 app.use(expressLayouts);
 app.set('view engine','ejs');
@@ -97,10 +99,7 @@ app.get("/login",(req,res)=>{
   res.render('login');
 });
 
-app.get("/dashboard",require('connect-ensure-login').ensureLoggedIn(),
-function(req, res){
-  res.render("dashboard",{user:req.user});
-});
+
 
 app.get('/logout',
   function(req, res){
@@ -154,6 +153,8 @@ passport.use(
     }
 )
 );
+
+app.use('/', dashboard );
 //Serialize the user
 passport.serializeUser(function(user, done) {
   done(null, user.id);
