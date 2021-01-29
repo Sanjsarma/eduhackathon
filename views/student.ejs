@@ -65,63 +65,7 @@
     .shadow-none {
         box-shadow: none!important;
     }
-    .card1 {
-        margin-top: 5%;
-        border-bottom: 2.5px solid gold !important; 
-        border-radius: 0;
-        line-height: 1.3;
-        font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-      }
-      
-      .card-body::after {
-        height: 0;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        border-top: 2.5px solid gold !important; 
-        -webkit-transition: all 0.35s;
-          -moz-transition: all 0.35s;
-        -o-transition: all 0.35s;
-          transition: all 0.35s;
-      }
-      
-      .card-body::before,
-      .card-body::after {
-        background: lemonchiffon;
-        content: '';
-        position: absolute;
-        z-index: -1;
-      }
-      
-      .card1:hover {
-        color: #000;
-      }
-      
-      .card1:hover .card-body:after {
-        height: 100%;
-        color: #fff;
-      }
-      
-      .card-body {  
-        position: relative;
-        z-index: 0;
-        -webkit-transition: all 0.35s ease;
-          -moz-transition: all 0.35s ease;
-        -o-transition: all 0.35s ease;
-          transition: all 0.35s ease;
-      }
-      
-      .card-img, .card-img-top {
-        z-index: 1;
-      }
-      
-      .card-text {
-        margin-bottom: 1rem;
-      }
-      
-      .card-date {
-        color: grey;
-      }
+    
 </style>
 
 </head>
@@ -213,44 +157,87 @@
    
 
   </section><!-- End Hero -->
-<section><div class="container">
-  <div class="row flex-xl-nowrap">
-    <div class="card-deck">
-        <div class="card1 border-0 col-sm-4 p-0">
-          <img class="card-img-top" src="https://images.unsplash.com/photo-1584937247987-07276272d215?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3450&q=80" alt="Card image cap">
-          <div class="card-body">
-            <h4 class="card-title h4">Card title</h4>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <h5 class="card-date">20/04/2020</h5>
+  <section id="pricing" class="pricing">
+
+    <div class="container" data-aos="fade-up">
+
+      <header class="section-header">
+        <h2>Pricing</h2>
+        <p>Check our Pricing</p>
+      </header>
+
+      <div class="row gy-4" data-aos="fade-left">
+
+        <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+          <div class="box">
+            <h3 style="color: #07d5c0;">Free Plan</h3>
+            <div class="price"><sup>$</sup>0<span> / mo</span></div>
+            <img src="assets/img/pricing-free.png" class="img-fluid" alt="">
+            <ul>
+              <li>Aida dere</li>
+              <li>Nec feugiat nisl</li>
+              <li>Nulla at volutpat dola</li>
+              <li class="na">Pharetra massa</li>
+              <li class="na">Massa ultricies mi</li>
+            </ul>
+            <a href="#" class="btn-buy">Buy Now</a>
           </div>
         </div>
-        <div class="card1 border-0 col-sm-4 p-0">
-          <img class="card-img-top" src="https://images.unsplash.com/photo-1584937248081-634bb38393fc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" alt="Card image cap">
-          <div class="card-body">
-            <h4 class="card-title h4">Card title</h4>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <h5 class="card-date">20/04/2020</h5>
+
+        <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+          <div class="box">
+            <span class="featured">Featured</span>
+            <h3 style="color: #65c600;">Starter Plan</h3>
+            <div class="price"><sup>$</sup>19<span> / mo</span></div>
+            <img src="assets/img/pricing-starter.png" class="img-fluid" alt="">
+            <ul>
+              <li>Aida dere</li>
+              <li>Nec feugiat nisl</li>
+              <li>Nulla at volutpat dola</li>
+              <li>Pharetra massa</li>
+              <li class="na">Massa ultricies mi</li>
+            </ul>
+            <a href="#" class="btn-buy">Buy Now</a>
           </div>
         </div>
-        <div class="card1 border-0 col-sm-4 p-0">
-          <img class="card-img-top" src="https://images.unsplash.com/photo-1584937247987-07276272d215?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3450&q=80" alt="Card image cap">
-          <div class="card-body">
-            <h4 class="card-title h4">Card title</h4>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <h5 class="card-date">20/04/2020</h5>
+
+        <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+          <div class="box">
+            <h3 style="color: #ff901c;">Business Plan</h3>
+            <div class="price"><sup>$</sup>29<span> / mo</span></div>
+            <img src="assets/img/pricing-business.png" class="img-fluid" alt="">
+            <ul>
+              <li>Aida dere</li>
+              <li>Nec feugiat nisl</li>
+              <li>Nulla at volutpat dola</li>
+              <li>Pharetra massa</li>
+              <li>Massa ultricies mi</li>
+            </ul>
+            <a href="#" class="btn-buy">Buy Now</a>
           </div>
         </div>
-        <div class="card1 border-0 col-sm-4 p-0">
-          <img class="card-img-top" src="https://images.unsplash.com/photo-1584937248081-634bb38393fc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" alt="Card image cap">
-          <div class="card-body">
-            <h4 class="card-title h4">Card title</h4>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <h5 class="card-date">20/04/2020</h5>
+
+        <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+          <div class="box">
+            <h3 style="color: #ff0071;">Ultimate Plan</h3>
+            <div class="price"><sup>$</sup>49<span> / mo</span></div>
+            <img src="assets/img/pricing-ultimate.png" class="img-fluid" alt="">
+            <ul>
+              <li>Aida dere</li>
+              <li>Nec feugiat nisl</li>
+              <li>Nulla at volutpat dola</li>
+              <li>Pharetra massa</li>
+              <li>Massa ultricies mi</li>
+            </ul>
+            <a href="#" class="btn-buy">Buy Now</a>
           </div>
         </div>
+
+      </div>
+
     </div>
-  </div>
-</div>
+
+  </section><!--
 </section>
   <main id="main">
     <!-- ======= About Section ======= -->
