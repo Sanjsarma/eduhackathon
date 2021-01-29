@@ -59,7 +59,7 @@ app.post('/register',(req,res)=>{
     errors.push({ msg: 'Password should have atleast 5 chars' });
   }
   if(errors.length >0){
-    res.render('register',{errors,name,email,password,password2});
+    res.render('register',{errors,ktuid,name,email,role,password,password2});
   }
    else {
     conn.query('SELECT ktuid FROM user WHERE ktuid ="' + ktuid +'"', function (err, result) {
