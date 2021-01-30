@@ -7,6 +7,7 @@ const flash=require('connect-flash');
 const session=require('express-session');
 var Strategy = require('passport-local').Strategy;
 var dashboard = require('./routes/userdashboard');
+var courses = require('./routes/courses');
 
 const app=express();
 const conn=mysql.createConnection({
@@ -155,6 +156,7 @@ passport.use(
 );
 
 app.use('/', dashboard );
+app.use('/', courses );
 //Serialize the user
 passport.serializeUser(function(user, done) {
   done(null, user.id);
