@@ -101,5 +101,11 @@ res.redirect('/dashboard');
 });
 });
 
-
+router.get('/users',(req,res)=>{
+  var sql='SELECT * from user';
+  db.query(sql,(err,data)=>{
+    if(err) throw err;
+    res.render('users',{userdata:data});
+  });
+});
 module.exports = router; 
