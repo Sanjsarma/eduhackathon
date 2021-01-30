@@ -51,7 +51,12 @@ app.use(function(req, res, next) {
 app.get('/register',(req,res)=>{
   res.render('register');
 });
-
+app.get('/',(req,res)=>{
+  res.render('home');
+});
+app.get('/semester',(req,res)=>{
+  res.render('sem');
+});
 app.post('/register',(req,res)=>{
   const { ktuid,name,email,role,password,password2} = req.body;
   let errors=[];

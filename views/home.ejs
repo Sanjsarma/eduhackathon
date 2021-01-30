@@ -1,67 +1,1005 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>devcraft</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
-    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
-    <link rel="stylesheet" href="assets/css/Bold-BS4-Footer-Big-Logo.css">
-    <link rel="stylesheet" href="assets/css/Dark-NavBar-1.css">
-    <link rel="stylesheet" href="assets/css/Dark-NavBar-2.css">
-    <link rel="stylesheet" href="assets/css/Dark-NavBar.css">
-    <link rel="stylesheet" href="assets/css/dh-navbar-inverse.css">
-    <link rel="stylesheet" href="assets/css/gradient-navbar-1.css">
-    <link rel="stylesheet" href="assets/css/gradient-navbar.css">
-    <link rel="stylesheet" href="assets/css/Login-Form-Dark.css">
-    <link rel="stylesheet" href="assets/css/Pretty-Footer.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>KtuGuide</title>
+  <meta content="" name="description">
+
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="assets/css/icofont.min.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <style>
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      padding-top: 100px; /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+    
+    /* Modal Content */
+    .modal-content {
+      position: relative;
+      font-weight: 600;
+      text-align: center;
+      background-color: #fefefe;
+      margin: auto;
+      padding: 0;
+      border: 1px solid #888;
+      width: 80%;
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+      -webkit-animation-name: animatetop;
+      -webkit-animation-duration: 0.4s;
+      animation-name: animatetop;
+      animation-duration: 0.4s
+    }
+    
+    
+    /* Add Animation */
+    @-webkit-keyframes animatetop {
+      from {top:-300px; opacity:0} 
+      to {top:0; opacity:1}
+    }
+    
+    @keyframes animatetop {
+      from {top:-300px; opacity:0}
+      to {top:0; opacity:1}
+    }
+    
+    /* The Close Button */
+    .close {
+      color: white;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+    .myBtn{
+      color:white;
+      background-color: #826aed;
+      border-radius: 50px;
+      padding: 8px 40px 10px 40px;
+      font-size: 16px;
+      font-weight: 600;
+      font-family: "Nunito", sans-serif;
+      transition: 0.3s;
+      border: 1px solid #826aed;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    
+    .modal-header {
+      padding: 2px 16px;
+      text-align: center;
+      background-color: #826aed;
+      color: white;
+      height:10%;
+      
+    }
+    
+    .modal-body {padding: 2px 16px; }
+    
+  
+  </style>
 </head>
 
-<body style="margin-bottom: 0;padding-bottom: 0;">
-    <nav class="navbar navbar-dark navbar-expand-md" id="app-navbar">
-        <div class="container-fluid"><a class="navbar-brand" href="#"><i class="icon ion-ios-infinite" id="brand-logo"></i></a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navcol-1">
-                <h1 style="color: var(--light);">StudPal</h1>
-                <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Sign-In</a></li>
-                </ul>
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="100">
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top gradient">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="assets/img/logo.png" alt="">
+        <span>KtuGuide</span>
+      </a>
+
+      <nav id="navbar" class="navbar ">
+        <ul>
+          <li><a class="nav-link active " href="#">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li><a class="getstarted scrollto" href="#about">Sign-In</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="hero d-flex align-items-center">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 d-flex flex-column justify-content-center">
+          <h1 data-aos="fade-up">One stop destination for KTU Students</h1>
+          <h2 data-aos="fade-up" data-aos-delay="400">We help students find the resources without hassle</h2>
+          <div data-aos="fade-up" data-aos-delay="600">
+            <div class="text-center text-lg-start">
+              <a href="#about" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                <span>Register Now!</span>
+                <i class="bi bi-arrow-right"></i>
+              </a>
             </div>
+          </div>
         </div>
-    </nav>
-    <footer id="foot">
+        <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
+          <img src="assets/img/front1.gif" class="img-fluid" alt="" style="padding-top: 80px;">
+          
+        </div>
+      </div>
+    </div>
+
+  </section><!-- End Hero -->
+
+  <main id="main">
+    
+    
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+
+      <div class="container" data-aos="fade-up">
+        <div class="row gx-0">
+
+          <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
+            <div class="content">
+              <h3>About KtuGuide</h3>
+             
+              <p>
+                KtuGuide is a platform that connects all the study resources in one playform<br>We offer Study Notes, Semester-wise courses, Video tutorials,Question Papers and much more!!
+              </p>
+              <div class="text-center text-lg-start">
+                <a href="#" class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
+                  <span>Read More</span>
+                  <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+            <img src="assets/img/about.jpg" class="img-fluid" alt="">
+          </div>
+
+        </div>
+      </div>
+
+    </section><!-- End About Section -->
+
+    <!-- ======= Features Section ======= -->
+    <section id="features" class="features">
+
+      <div class="container" data-aos="fade-up">
+
+        <!-- <header class="section-header">
+          <h2>Features</h2>
+          <p>Laboriosam et omnis fuga quis dolor direda fara</p>
+        </header> -->
+
+        <!-- <div class="row">
+
+          <div class="col-lg-6">
+            <img src="assets/img/features.png" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-lg-6 mt-5 mt-lg-0 d-flex">
+            <div class="row align-self-center gy-4">
+
+              <div class="col-md-6" data-aos="zoom-out" data-aos-delay="200">
+                <div class="feature-box d-flex align-items-center">
+                  <i class="bi bi-check"></i>
+                  <h3>Eos aspernatur rem</h3>
+                </div>
+              </div>
+
+              <div class="col-md-6" data-aos="zoom-out" data-aos-delay="300">
+                <div class="feature-box d-flex align-items-center">
+                  <i class="bi bi-check"></i>
+                  <h3>Facilis neque ipsa</h3>
+                </div>
+              </div>
+
+              <div class="col-md-6" data-aos="zoom-out" data-aos-delay="400">
+                <div class="feature-box d-flex align-items-center">
+                  <i class="bi bi-check"></i>
+                  <h3>Volup amet voluptas</h3>
+                </div>
+              </div>
+
+              <div class="col-md-6" data-aos="zoom-out" data-aos-delay="500">
+                <div class="feature-box d-flex align-items-center">
+                  <i class="bi bi-check"></i>
+                  <h3>Rerum omnis sint</h3>
+                </div>
+              </div>
+
+              <div class="col-md-6" data-aos="zoom-out" data-aos-delay="600">
+                <div class="feature-box d-flex align-items-center">
+                  <i class="bi bi-check"></i>
+                  <h3>Alias possimus</h3>
+                </div>
+              </div>
+
+              <div class="col-md-6" data-aos="zoom-out" data-aos-delay="700">
+                <div class="feature-box d-flex align-items-center">
+                  <i class="bi bi-check"></i>
+                  <h3>Repellendus mollitia</h3>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div> / row -->
+
+        
+
+        <!-- Feature Icons -->
+        <div class="row feature-icons" data-aos="fade-up">
+          <h3>What are our features?</h3>
+
+          <div class="row">
+
+            <div class="col-xl-4 text-center" data-aos="fade-right" data-aos-delay="100">
+              <img src="assets/img/features-3.png" class="img-fluid p-4" alt="">
+            </div>
+
+            <div class="col-xl-8 d-flex content">
+              <div class="row align-self-center gy-4">
+
+                <div class="col-md-6 icon-box" data-aos="fade-up">
+                  <i class="ri-line-chart-line"></i>
+                  <div>
+                    <h4>Study Notes for each semester</h4>
+                    <p>Various notes prepared by experienced teachers and students available only on GuideInc</p>
+                  </div>
+                </div>
+
+                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
+                  <i class="ri-stack-line"></i>
+                  <div>
+                    <h4>Referance videos for different subjects</h4>
+                    <p>As the saying goes, self-study with videos leaves a powerful impact on the brain! <br>Each subject will have videos of known teachers teaching the concepts</p>
+                  </div>
+                </div>
+
+                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
+                  <i class="ri-brush-4-line"></i>
+                  <div>
+                    <h4>Question Papers</h4>
+                    <p>During exam time why run around finding last year question papers? Find it all in KtuGuide!</p>
+                  </div>
+                </div>
+
+                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
+                  <i class="ri-magic-line"></i>
+                  <div>
+                    <h4>TP Solved</h4>
+                    <p>The well known Thakur Publications solved questions guide is a favourite among the students, well guess what we have that in store for you too!</p>
+                  </div>
+                </div>
+
+                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
+                  <i class="ri-command-line"></i>
+                  <div>
+                    <h4>Book Store</h4>
+                    <p>Want to buy a hardcopy of your textbook? Head on to our bookstore with all the textbooks needed by Engineering students</p>
+                  </div>
+                </div>
+
+                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="500">
+                  <i class="ri-radar-line"></i>
+                  <div>
+                    <h4>Platform for Teachers</h4>
+                    <p>Teachers get a platform to post and organize videos of their teaching to the students</p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div><!-- End Feature Icons -->
+
+      </div>
+
+    </section><!-- End Features Section -->
+
+    <!-- <div class='container'>
+      <div class="pacman">
+        <div class="pacman-top"></div>
+        <div class="pacman-bottom"></div>
+        <div class="feed"></div>
+        </div>
+    </div>
+     -->
+      
+
+    <!-- ======= Values Section ======= -->
+    <!-- <section id="values" class="values">
+
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header">
+          <h2>Our Values</h2>
+          <p>Odit est perspiciatis laborum et dicta</p>
+        </header>
+
         <div class="row">
-            <div class="col-sm-6 col-md-4 footer-navigation">
-                <h3><a href="#">StudPal</a></h3>
-                <p class="links"><a href="#">Home</a><a href="#"></a><a href="#"></a><strong> · </strong><a href="#">About</a><strong> · </strong><a href="#">Sign-In</a><strong>&nbsp;</strong><a href="#"></a></p>
-                <p class="company-name">Company Name © 2021</p>
+
+          <div class="col-lg-4">
+            <div class="box" data-aos="fade-up" data-aos-delay="200">
+              <img src="assets/img/values-1.png" class="img-fluid" alt="">
+              <h3>Ad cupiditate sed est odio</h3>
+              <p>Eum ad dolor et. Autem aut fugiat debitis voluptatem consequuntur sit. Et veritatis id.</p>
             </div>
-            <div class="col-sm-6 col-md-4 footer-contacts">
-                <div><span class="fa fa-map-marker footer-contacts-icon"> </span>
-                    <p><span class="new-line-span">KG Lane, Thiruvanathapuram</span></p>
-                </div>
-                <div><i class="fa fa-phone footer-contacts-icon"></i>
-                    <p class="footer-center-info email text-left"> +1 555 123456</p>
-                </div>
-                <div><i class="fa fa-envelope footer-contacts-icon"></i>
-                    <p> <a href="#" target="_blank">support@studpal.com</a></p>
-                </div>
+          </div>
+
+          <div class="col-lg-4 mt-4 mt-lg-0">
+            <div class="box" data-aos="fade-up" data-aos-delay="400">
+              <img src="assets/img/values-2.png" class="img-fluid" alt="">
+              <h3>Voluptatem voluptatum alias</h3>
+              <p>Repudiandae amet nihil natus in distinctio suscipit id. Doloremque ducimus ea sit non.</p>
             </div>
-            <div class="clearfix"></div>
-            <div class="col-md-4 footer-about">
-                <h4>About StudPal</h4>
-                <p>One stop for all engineering students</p>
-                <div class="social-links social-icons"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-linkedin"></i></a><a href="#"><i class="fa fa-github"></i></a></div>
+          </div>
+
+          <div class="col-lg-4 mt-4 mt-lg-0">
+            <div class="box" data-aos="fade-up" data-aos-delay="600">
+              <img src="assets/img/values-3.png" class="img-fluid" alt="">
+              <h3>Fugit cupiditate alias nobis.</h3>
+              <p>Quam rem vitae est autem molestias explicabo debitis sint. Vero aliquid quidem commodi.</p>
             </div>
+          </div>
+
         </div>
-    </footer>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+
+      </div> -->
+
+    <!-- </section><--End Values Section -->
+
+      <!-- ======= Team Section ======= -->
+    <section id="team" class="team">
+
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header">
+          
+          <p>What you'll get</p>
+        </header>
+
+        <div class="row gy-4">
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+            <div class="member">
+              <div class="member-img">
+                <img src="assets/img/team/pic1.jpg" class="img-fluid" alt="">
+                
+              </div>
+              <div class="member-info">
+                <h4>Study Notes</h4>
+                
+                <p>Notes prepared by some of the brightest students and teachers</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+            <div class="member">
+              <div class="member-img">
+                <img src="assets/img/team/pic2.jpg" class="img-fluid" alt="">
+                
+              </div>
+              <div class="member-info">
+                <h4>Videos for Referance</h4>
+              
+                <p>Videos for topics of differnt subjects are suggested</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+            <div class="member">
+              <div class="member-img">
+                <img src="assets/img/team/pic4.jpg" class="img-fluid" alt="">
+                
+              </div>
+              <div class="member-info">
+                <h4>Question Papers</h4>
+                
+                <p>Practice for the exams by getting previous year wuestion papers</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
+            <div class="member">
+              <div class="member-img">
+                <img src="assets/img/team/pic5.jpg" class="img-fluid" alt="">
+                
+              </div>
+              <div class="member-info">
+                <h4>ChatBot Assistance</h4>
+             
+                <p>Ask your queries to our online chatbot at any time of the day!</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- End Team Section -->
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header">
+          
+          <p>Choose your Branch</p>
+        </header>
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-box blue">
+            <i class=" ri-computer-line icon"></i>
+              <h3>Computer Science and Engineering</h3>
+              
+              <button class="myBtn">Continue</button>
+
+              
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-box orange">
+              <i class=" ri-projector-fill icon"></i>
+              <h3>Electronics and Communication Engineering</h3>
+              
+              <button class="myBtn">Continue</button>
+
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-box green">
+              <i class=" ri-cpu-fill icon"></i>
+              
+              <h3>Electrical and Electronics Engineering</h3>
+              
+              <button class="myBtn">Continue</button>
+
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="service-box red">
+              <i class="ri-signal-tower-fill icon"></i>
+              <h3>Civil Engineering</h3>
+              
+              <button class="myBtn">Continue</button>
+
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+            <div class="service-box purple">
+              <i class=" ri-scan-2-line icon"></i>
+              <h3>Biomedical Engineering</h3>
+            
+              <button class="myBtn">Continue</button>
+
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="700">
+            <div class="service-box pink">
+              <i class=" ri-apps-2-line icon"></i>
+              <h3>Mechanical Engineering</h3>
+              
+              <button class="myBtn">Continue</button>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+      <!-- The Modal -->
+<div id="myModal" class="modal" style="padding-bottom:50px;">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2 style="text-align: center!important;">Hey there!</h2>
+    </div><br>
+    <div class="modal-body">
+      <p><b>Please login to proceed</b></p>
+      <div class="w3-container">
+        <p><button class="w3-button w3-black w3-round-xxlarge" style="background-color:#826aed!important;">Login Here</button></p>
+      </div>
+    </div>
+    
+  </div>
+
+</div>
+      
+      </div>
+      <script>
+        // Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btns = document.getElementsByClassName("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+for (var i = 0; i < btns.length; i++) {
+  btns[i].onclick = function() {
+    modal.style.display = "block";
+  }
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+        </script>
+
+    </section><!-- End Services Section -->
+
+    <!-- ======= Pricing Section ======= -->
+    <section id="pricing" class="pricing">
+
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header">
+          <p>Check out our Book Store</p>
+        </header>
+
+        <div class="row gy-4" data-aos="fade-left">
+
+          <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+            <div class="box">
+              <h3 style="color: black;">Sem-1</h3>
+              <h2 style="color: black;">Calculus</h2>
+              <img src="assets/img/book1.jpg" class="img-fluid" alt="">
+              
+              <a href="#" class="btn-buy">Go To Store</a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+            <div class="box">
+              <h3 style="color: black;">Sem-5</h3>
+              <h2 style="color: black;" style="font-size:10px;">Data Communication</h2>
+              <img src="assets/img/book2.jpg" class="img-fluid" alt="">
+              
+              <a href="#" class="btn-buy">Go To Store</a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+            <div class="box">
+              <h3 style="color: black;">Sem-4</h3>
+              <h2 style="color: black;" style="font-size:10px;">Data Structure</h2>
+              <img src="assets/img/book3.jpg" class="img-fluid" alt="">
+              
+              <a href="#" class="btn-buy">Go To Store</a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+            <div class="box">
+              <h3 style="color: black;">Sem-5</h3>
+              <h2 style="color:black;" style="font-size:10px;">Graph Theory</h2>
+              <img src="assets/img/book4.jpg" class="img-fluid" alt="">
+              
+              <a href="#" class="btn-buy">Go To Store</a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- End Pricing Section -->
+
+    <!-- ======= F.A.Q Section ======= -->
+    <section id="faq" class="faq">
+
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header">
+          <p>Frequently Asked Questions</p>
+        </header>
+
+        <div class="row">
+          <div class="col-lg-6">
+            <!-- F.A.Q List 1-->
+            <div class="accordion accordion-flush" id="faqlist1">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-1">
+                    How do i create an account? Is it free?
+                  </button>
+                </h2>
+                <div id="faq-content-1" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
+                  <div class="accordion-body">
+                    Option to register is there in the top right corner of navigation bar, yes its completly  free!
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-2">
+                    What are the benefits teachers get from KtuGuide?
+                  </button>
+                </h2>
+                <div id="faq-content-2" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
+                  <div class="accordion-body">
+                   Teachers can upload videos for their students through their personalised dashboard
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-3">
+                    Can I purchase textbooks?
+                  </button>
+                </h2>
+                <div id="faq-content-3" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
+                  <div class="accordion-body">
+                     We have an online book store that provides all the textbooks used during the course of BTech studies
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+
+            <!-- F.A.Q List 2-->
+            <div class="accordion accordion-flush" id="faqlist2">
+
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-1">
+                    How long can I access it for free?
+                  </button>
+                </h2>
+                <div id="faq2-content-1" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
+                  <div class="accordion-body">
+                   For however long you want!
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-2">
+                    Are the videos by teachers or others?
+                  </button>
+                </h2>
+                <div id="faq2-content-2" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
+                  <div class="accordion-body">
+                     The most apt videos for each subjects are given for referance, its my teachers and other experienced people
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-3">
+                    Will there be question papers?
+                  </button>
+                </h2>
+                <div id="faq2-content-3" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
+                  <div class="accordion-body">
+                    Yes there are
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- End F.A.Q Section -->
+
+    
+
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="testimonials">
+
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header">
+          <p>Reviews from our Users</p>
+        </header>
+
+        <div class="testimonials-slider swiper-container" data-aos="fade-up" data-aos-delay="200">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  I used to find it so hard to gather all my notes and guides from the internet, KtuGuide has made it so easy for me to get all that I need in one platform
+                </p>
+                <div class="profile mt-auto">
+                  <img src="assets/img/testimonials/p2.jpg" class="testimonial-img" alt="">
+                  <h3>Amrutha Ran</h3>
+                  <h4>Student</h4>
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  KtuGuide makes it hassle free to manage my class recordings and send it to students and to organise it
+                </p>
+                <div class="profile mt-auto">
+                  <img src="assets/img/testimonials/p3.jpg" class="testimonial-img" alt="">
+                  <h3>Sara Wilsson</h3>
+                  <h4>Teacher</h4>
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  Everything I used to gather in days can now be got with a single click, thank you KtuGuide!
+                </p>
+                <div class="profile mt-auto">
+                  <img src="assets/img/testimonials/p4.jpg" class="testimonial-img" alt="">
+                  <h3>Sreejith</h3>
+                  <h4>Student</h4>
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+
+    </section><!-- End Testimonials Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header">
+          
+          <p>Contact Us</p>
+        </header>
+
+        <div class="row gy-4">
+
+          <div class="col-lg-6">
+
+            <div class="row gy-4">
+              <div class="col-md-6">
+                <div class="info-box">
+                  <i class="bi bi-geo-alt"></i>
+                  <h3>Address</h3>
+                  <p>KG Lane,<br>Kilikadu<br>Thiruvananthapuram<br>
+                </div>
+              </div>
+              
+              <div class="col-md-6">
+                <div class="info-box">
+                  <i class="bi bi-envelope"></i>
+                  <h3>Contact Us</h3>
+                  <p>+1 5589 55488 55</p>
+                  <p>info@ktuguide.com<br>contact@ktuguide.com</p>
+                </div>
+              </div>
+              
+            </div>
+
+          </div>
+
+          <div class="col-lg-6">
+            <form action="forms/contact.php" method="post" class="php-email-form">
+              <div class="row gy-4">
+
+                <div class="col-md-6">
+                  <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                </div>
+
+                <div class="col-md-6 ">
+                  <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+                </div>
+
+                <div class="col-md-12">
+                  <input type="text" class="form-control" name="subject" placeholder="Subject" required>
+                </div>
+
+                <div class="col-md-12">
+                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
+                </div>
+
+                <div class="col-md-12 text-center">
+                  <div class="loading">Loading</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">Your message has been sent. Thank you!</div>
+
+                  <button type="submit">Send Message</button>
+                </div>
+
+              </div>
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+
+    <div class="footer-newsletter">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-12 text-center">
+            <h4>Subscribe to get Notifications</h4>
+            <p>We'll update you with new changes and additions</p>
+          </div>
+          <div class="col-lg-6">
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-5 col-md-12 footer-info">
+            <a href="index.html" class="logo d-flex align-items-center">
+              <img src="assets/img/logo.png" alt="">
+              <span>KtuGuide</span>
+            </a>
+            <p>One stop destination for KTU Students</p>
+            <div class="social-links mt-3">
+              <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+              <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="instagram"><i class="bi bi-instagram bx bxl-instagram"></i></a>
+              <a href="#" class="linkedin"><i class="bi bi-linkedin bx bxl-linkedin"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">About us</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Sign-In</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Study Notes</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Question Papers</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Platform for teachers</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Referance Videos</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Book Store</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+            <h4>Contact Us</h4>
+            <p>
+              KG Lane, <br>
+              Thiruvananthapuram<br><br>
+              <strong>Phone:</strong> +1 5589 55488 55<br>
+              <strong>Email:</strong> info@ktuguide.com<br>
+            </p>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>KtuGuide</span></strong>. All Rights Reserved
+      </div>
+      
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
 </body>
 
 </html>
