@@ -1,7 +1,7 @@
 const mysql =require('mysql');
 var conn = mysql.createConnection({
     connectionList:10,
-    password:'12345',
+    password:'',
    user:'root',
     database:'eduhack',
     host:'localhost',

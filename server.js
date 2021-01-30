@@ -1,5 +1,6 @@
 const express=require('express');
 const expressLayouts=require('express-ejs-layouts');
+const fileUpload = require('express-fileupload');
 const mysql = require('mysql');
 const bcrypt = require('bcryptjs');
 const passport = require('passport');
@@ -7,15 +8,16 @@ const flash=require('connect-flash');
 const session=require('express-session');
 var Strategy = require('passport-local').Strategy;
 var dashboard = require('./routes/userdashboard');
-
+var insertcourses = require('./routes/insertcourses');
 const app=express();
 const conn=mysql.createConnection({
     host:'localhost',
     user: 'root',
-    password: '12345',
+    password: '',
     database: 'eduhack'
 })
 app.use(express.static('public'));
+app.use(fileUpload());
 
 app.use(expressLayouts);
 app.set('view engine','ejs');
@@ -139,6 +141,7 @@ passport.use(
           console.log(rows[0].password);
           bcrypt.compare(password,rows[0].password,function(err,result){
             if(result){
+                req.session.ktuid=rows[0].ktuid;
               return done(null, rows[0]);
             }
             else{
@@ -155,6 +158,8 @@ passport.use(
 );
 
 app.use('/', dashboard );
+app.use('/',insertcourses);
+
 //Serialize the user
 passport.serializeUser(function(user, done) {
   done(null, user.id);
