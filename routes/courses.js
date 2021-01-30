@@ -16,11 +16,25 @@ function(req, res){
          var tp=[]
          var video=[]
          var note=[]
+         var qp=[]
+         var tb=[]
+         var sql='select * from  qp where courseid = (?) ;';
+        db.query(sql, [cid,i], function (err, data1, fields) {
+          console.log(data1)
+            data1 .forEach(function(v){ qp.push(v.link); 
+              })
+        });
+        var sql='select * from  text where courseid = (?) ;';
+        db.query(sql, [cid,i], function (err, data1, fields) {
+          console.log(data1)
+            data1 .forEach(function(v){ tb.push(v); 
+              })
+        });
          for(var i =1;i<=6;i++){
          var sql='select * from  materials where courseid = (?) and mod_no=(?);';
         db.query(sql, [cid,i], function (err, data1, fields) {
           console.log(data1)
-            data1 .forEach(function(v){ tp.push(v.tp_link); 
+            data1 .forEach(function(v){ tp.push(v.Tp_link); 
               video.push(v.video_link);
               note.push(v.Notes_link);})
         });
@@ -28,8 +42,8 @@ function(req, res){
       setTimeout(function1,200);
       function function1 ()
       {
-        console.log(video);
-      res.render('course',{cname:req.session.cname,cid:cid,syllabus:syllabus,video:video,note:note,tp:tp});
+        console.log(tp);
+      res.render('course',{cname:req.session.cname,cid:cid,syllabus:syllabus,video:video,note:note,tp:tp,qp:qp,tb:tb});
       }
     });
    

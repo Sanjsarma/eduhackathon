@@ -307,40 +307,33 @@
           <div class="container">
             <div class="card">
               <div class="Box">
-                <img src="https://images.pexels.com/photos/594610/pexels-photo-594610.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+                <img src="<%= tb[0].img_url %>">
               </div>
               <div class="details">
-                <h2>Lorem ipsum dolor</h2>
-                <p>consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+                <h2><%= tb[0].t_name %></h2>
+                <button><a href= "<%= tb[0].link %>"> Read </a></button>
               </div>
             </div>
             <div class="card">
               <div class="Box">
-                <img src="https://images.pexels.com/photos/3699319/pexels-photo-3699319.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+                <img src="<%= tb[1].img_url %>">
               </div>
               <div class="details">
-                <h2>Lorem ipsum dolor</h2>
-                <p>consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+                <h2><%= tb[1].t_name %></h2>
+                <button><a href= "<%= tb[1].link %>"> Read </a></button>
               </div>
             </div>
-            <div class="card">
-              <div class="Box">
-                <img src="https://images.pexels.com/photos/598917/pexels-photo-598917.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
-              </div>
-              <div class="details">
-                <h2>Lorem ipsum dolor</h2>
-                <p>consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
-              </div>
-            </div>
+            
           </div>
           <section class="trial">
      
             <div class="buttons">
-              <button class="btn btn-gradient"> 2016</button>
-             <button class="btn btn-gradient "> 2017 </button>
-             <button class="btn btn-gradient "> 2018 </button>
-             <button class="btn btn-gradient"> 2019 </button>
-             <button class="btn btn-gradient"> 2020</button>
+              <button  class="btn btn-gradient"> <a  href= "<%= qp[0] %> " style="color:white;" >Question Paper 1</a> </button>
+             <button class="btn btn-gradient "><a href= "<%= qp[1] %> "  style="color:white;" >Question Paper  2</a>  </button>
+             <button  class="btn btn-gradient "><a href= "<%= qp[2] %> "  style="color:white;" >Question Paper  3 </a> </button>
+             <button  class="btn btn-gradient"><a href= "<%= qp[3] %> "  style="color:white;" >Question Paper  4 </a>  </button>
+             <button  class="btn btn-gradient"><a href= "<%= qp[4] %> "  style="color:white;" >Question Paper  5</a></button>
+            
          
             </div>
             <header class="section-header">
