@@ -117,5 +117,78 @@ res.redirect('/dashboard');
 });
 });
 
+router.post('/changename', function(req, res, next) {
+    
+  inputData ={
+      name: req.body.name
+      
+  }
+var sql='Update user set name = (?)  WHERE ktuid = (?)';
+db.query(sql, [inputData.name,req.session.ktuid] ,function (err, data1, fields) {
+if(err) throw err
+res.redirect('/dashboard');
+   
+});
+});
+
+
+router.post('/changesem', function(req, res, next) {
+    
+  inputData ={
+      name: parseInt(req.body.branch) 
+      
+  }
+var sql='Update user set sem = (?)  WHERE ktuid = (?)';
+db.query(sql, [inputData.name,req.session.ktuid] ,function (err, data1, fields) {
+if(err) throw err
+res.redirect('/dashboard');
+   
+});
+});
+
+
+router.post('/changemail', function(req, res, next) {
+    
+  inputData ={
+      email: req.body.email
+      
+  }
+ 
+      var sql='Update user set email = (?)  WHERE ktuid = (?)';
+      db.query(sql, [inputData.email,req.session.ktuid] ,function (err, data1, fields) {
+        res.redirect('/dashboard');
+           
+      });
+  
+});
+router.post('/changecollege', function(req, res, next) {
+    
+  inputData ={
+      email: req.body.email
+      
+  }
+ 
+      var sql='Update user set college = (?)  WHERE ktuid = (?)';
+      db.query(sql, [inputData.email,req.session.ktuid] ,function (err, data1, fields) {
+        res.redirect('/dashboard');
+           
+      });
+  
+});
+
+router.post('/changebranch', function(req, res, next) {
+    
+  inputData ={
+      name: req.body.branch
+      
+  }
+var sql='Update user set branchid = (?)  WHERE ktuid = (?)';
+db.query(sql, [inputData.name,req.session.ktuid] ,function (err, data1, fields) {
+if(err) throw err
+res.redirect('/dashboard');
+   
+});
+});
+
 
 module.exports = router; 
