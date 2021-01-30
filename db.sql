@@ -12,8 +12,6 @@ create table branch ( id int primary key,
 bname varchar(250)
 );
 
-alter table courses add link varchar (200);
-
 create table allotment (
 id INTEGER AUTO_INCREMENT,
 ktuid varchar(20) references user(ktuid),
@@ -25,5 +23,9 @@ create table courses ( courseid varchar(7) ,
 cname varchar(250),
 sem int(2),
 branchid int, 
+link varchar(200),
 foreign key (branchid) references branch(id),
 primary key (courseid));
+
+alter table user add branchid int;
+

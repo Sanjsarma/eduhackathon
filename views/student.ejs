@@ -81,7 +81,12 @@
         <div class="main-body">
         
               
-            
+          <%
+          if(Userdata.length!=0){
+          var i=1;
+          Userdata.forEach(function(data){
+          {
+          %>
         
               <div class="row gutters-sm">
                 <div class="col-md-4 mb-3">
@@ -90,8 +95,8 @@
                       <div class="d-flex flex-column align-items-center text-center">
                         <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
                         <div class="mt-3">
-                          <h4>Student Name </h4>
-                          <p class="text-secondary mb-1">College</p>
+                          <h4><%=data.ktuid%> </h4>
+                          <p class="text-secondary mb-1"><%=data.college%></p>
                          
                         </div>
                       </div>
@@ -107,7 +112,7 @@
                           <h6 class="mb-0" style = "    font-size: 1.5Rem;">Full Name</h6>
                         </div>
                         <div class="col-sm-9 text-secondary">
-                          Kenneth Valdez
+                          <%= data.name %>
                         </div>
                       </div>
                       <hr>
@@ -116,7 +121,7 @@
                           <h6 class="mb-0"  style = "    font-size: 1.5Rem;">Branch</h6>
                         </div>
                         <div class="col-sm-9 text-secondary">
-                          fip@jukmuh.al
+                          <%= data.branchid %>
                         </div>
                       </div>
                       <hr>
@@ -125,7 +130,7 @@
                           <h6 class="mb-0"  style = "    font-size: 1.5Rem;">Semester</h6>
                         </div>
                         <div class="col-sm-9 text-secondary">
-                          (239) 816-9029
+                          <%=data.sem %>
                         </div>
                       </div>
                       <hr>
@@ -134,7 +139,7 @@
                           <h6 class="mb-0" style = "    font-size: 1.5Rem;">College</h6>
                         </div>
                         <div class="col-sm-9 text-secondary">
-                          (320) 380-4539
+                          <%= data.college %>
                         </div>
                       </div>
                       <hr>
@@ -143,7 +148,7 @@
                           <h6 class="mb-0" style = "    font-size: 1.5Rem;">Email</h6>
                         </div>
                         <div class="col-sm-9 text-secondary">
-                          Bay Area, San Francisco, CA
+                          <%= data.email %>
                         </div>
                       </div>
                     </div>
@@ -152,35 +157,36 @@
                   </div>
                 </div>
               </div>
+              <% } })%>
+              <% } %>
             </div>
         </div>
    
-
+        
   </section><!-- End Hero -->
-  <section id="pricing" class="pricing">
+  <section id="courses" class="pricing">
 
     <div class="container" data-aos="fade-up">
 
       <header class="section-header">
-        <h2>Pricing</h2>
-        <p>Check our Pricing</p>
+        <p>Check your courses!</p>
       </header>
-
+      <%
+      if(coursedata.length!=0){
+      var i=1;
+      coursedata.forEach(function(data){
+      {
+      %>
       <div class="row gy-4" data-aos="fade-left">
 
         <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="100">
           <div class="box">
-            <h3 style="color: #07d5c0;">Free Plan</h3>
-            <div class="price"><sup>$</sup>0<span> / mo</span></div>
-            <img src="assets/img/pricing-free.png" class="img-fluid" alt="">
+            <div class="price" style="color: #1e0b4e;"><sup><%=data.cname%></sup></div>
+            <img src="http://localhost:8000/images/<%=data.link %>" class="img-fluid" alt="">
             <ul>
-              <li>Aida dere</li>
-              <li>Nec feugiat nisl</li>
-              <li>Nulla at volutpat dola</li>
-              <li class="na">Pharetra massa</li>
-              <li class="na">Massa ultricies mi</li>
+              <li><%=data.courseid%></li>
             </ul>
-            <a href="#" class="btn-buy">Buy Now</a>
+            <a href="#" class="btn-buy">Click here</a>
           </div>
         </div>
 
@@ -234,10 +240,14 @@
         </div>
 
       </div>
-
+      <% } }) } else { %>
+        <h1>No courses</h1>
+        <% } %>
     </div>
 
-  </section><!--
+  </section>
+  
+  <!--
 </section>
   <main id="main">
     <!-- ======= About Section ======= -->
