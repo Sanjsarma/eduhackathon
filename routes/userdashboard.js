@@ -4,6 +4,22 @@ const expressLayouts=require('express-ejs-layouts');
 const session=require('express-session');
 var router = express.Router();
 var db=require('../db/data');
+router.get("/materials", function(req, res){
+  var sql='SELECT * FROM materials';
+  db.query(sql, function (err, data, fields) {
+    res.render("materials.ejs",{ userData : data });
+  });
+
+
+    
+
+  
+
+    
+      
+});
+
+
 
 router.get("/dashboard",require('connect-ensure-login').ensureLoggedIn(),
 function(req, res){
@@ -101,11 +117,78 @@ res.redirect('/dashboard');
 });
 });
 
-router.get('/users',(req,res)=>{
-  var sql='SELECT * from user';
-  db.query(sql,(err,data)=>{
-    if(err) throw err;
-    res.render('users',{userdata:data});
-  });
+router.post('/changename', function(req, res, next) {
+    
+  inputData ={
+      name: req.body.name
+      
+  }
+var sql='Update user set name = (?)  WHERE ktuid = (?)';
+db.query(sql, [inputData.name,req.session.ktuid] ,function (err, data1, fields) {
+if(err) throw err
+res.redirect('/dashboard');
+   
 });
+});
+
+
+router.post('/changesem', function(req, res, next) {
+    
+  inputData ={
+      name: parseInt(req.body.branch) 
+      
+  }
+var sql='Update user set sem = (?)  WHERE ktuid = (?)';
+db.query(sql, [inputData.name,req.session.ktuid] ,function (err, data1, fields) {
+if(err) throw err
+res.redirect('/dashboard');
+   
+});
+});
+
+
+router.post('/changemail', function(req, res, next) {
+    
+  inputData ={
+      email: req.body.email
+      
+  }
+ 
+      var sql='Update user set email = (?)  WHERE ktuid = (?)';
+      db.query(sql, [inputData.email,req.session.ktuid] ,function (err, data1, fields) {
+        res.redirect('/dashboard');
+           
+      });
+  
+});
+router.post('/changecollege', function(req, res, next) {
+    
+  inputData ={
+      email: req.body.email
+      
+  }
+ 
+      var sql='Update user set college = (?)  WHERE ktuid = (?)';
+      db.query(sql, [inputData.email,req.session.ktuid] ,function (err, data1, fields) {
+        res.redirect('/dashboard');
+           
+      });
+  
+});
+
+router.post('/changebranch', function(req, res, next) {
+    
+  inputData ={
+      name: req.body.branch
+      
+  }
+var sql='Update user set branchid = (?)  WHERE ktuid = (?)';
+db.query(sql, [inputData.name,req.session.ktuid] ,function (err, data1, fields) {
+if(err) throw err
+res.redirect('/dashboard');
+   
+});
+});
+
+
 module.exports = router; 

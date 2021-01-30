@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script> 
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+  <%- include('partials/head.ejs')%>
+  <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+            <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+    
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+  <style>
+    body{
+        margin-top:20px;
+        color: #1a202c;
+        text-align: left;
+          
+    }
+    .main-body {
+        padding: 15px;
+    }
+    .card {
+        box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.06);
+    }
+    
+    .card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        background-color: #fff;
+        background-clip: border-box;
+        border: 0 solid rgba(0,0,0,.125);
+        border-radius: .25rem;
+    }
+    
+    .card-body {
+        flex: 1 1 auto;
+        min-height: 1px;
+        padding: 1rem;
+    }
+    
+    .gutters-sm {
+        margin-right: -8px;
+        margin-left: -8px;
+    }
+    
+    .gutters-sm>.col, .gutters-sm>[class*=col-] {
+        padding-right: 8px;
+        padding-left: 8px;
+    }
+    .mb-3, .my-3 {
+        margin-bottom: 1rem!important;
+    }
+    
+    .bg-gray-300 {
+        background-color: #e2e8f0;
+    }
+    .h-100 {
+        height: 100%!important;
+    }
+    .shadow-none {
+        box-shadow: none!important;
+    }
+   
+        * {
+    box-sizing: border-box;
+  }
+
+
+  /* Set a background color */
+  body {
+    background-color:#ffffff;
+    font-family: Helvetica, sans-serif;
+  }
+  
+  .button {
+    border: none;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 2px 2px;
+    cursor: pointer;
+    background-color: blueviolet;
+    border-radius: 12px;
+    
+  }
+  .button:hover
+  {
+      background-color: #180625;
+      color: rgb(255, 255, 255);
+  }
+  .button1
+  {
+      text-align: center;
+  }
+
+  /* The actual timeline (the vertical ruler) */
+  .timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* The actual timeline (the vertical ruler) */
+  .timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: #320750;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+  }
+  
+  /* Container around content */
+  .containers {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+    color: white;
+    transition-duration: 1s;
+  }
+  
+  /* The circles on the timeline */
+  /*
+  .containers::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -17px;
+    background-color: white;
+    border: 4px solid #7e36b1;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+  }
+  */
+  
+  .containers:hover 
+  {
+    
+    color: black;
+  }
+  /* Place the container to the left */
+  .left {
+    left: 0;
+  }
+  
+  
+  /* Place the container to the right */
+  .right {
+    left: 50%;
+  }
+  
+ 
+  /* Add arrows to the left container (pointing right) */
+  /*.left::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 30px;
+    border: medium solid blueviolet;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent blueviolet;
+  }
+*/
+
+  
+  /* Add arrows to the right container (pointing left) */
+  /*.right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid blueviolet;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent blueviolet transparent transparent;
+  }
+  */
+  /* Fix the circle for containers on the right side */
+  .right::after {
+    left: -16px;
+  }
+  
+  /* The actual content */
+  .content {
+    padding: 20px 30px;
+    background-color: blueviolet;
+    position: relative;
+    border-radius: 6px;
+  }
+  .content p
+  {
+      color: black;
+  }
+  /* Media queries - Responsive timeline on screens less than 600px wide */
+  @media screen and (max-width: 600px) {
+  /* Place the timelime to the left */
+    .timeline::after {
+      left: 31px;
+    }
+  
+  /* Full-width containers */
+    .containers {
+      width: 100%;
+      padding-left: 70px;
+      padding-right: 25px;
+    }
+  
+  /* Make sure that all arrows are pointing leftwards */
+    .containers::before {
+      left: 60px;
+      border: medium solid white;
+      border-width: 10px 10px 10px 0;
+      border-color: transparent white transparent transparent;
+    }
+  
+  /* Make sure all circles are at the same spot */
+    .left::after, .right::after {
+      left: 15px;
+    }
+  
+  /* Make all right containers behave like the left ones */
+    .right {
+      left: 0%;
+    }
+  }
+        body {font-family: Arial, Helvetica, sans-serif;}
+        
+        /* The Modal (background) */
+        .modal {
+          display: none; /* Hidden by default */
+          position: fixed; /* Stay in place */
+          z-index: 1; /* Sit on top */
+          padding-top: 100px; /* Location of the box */
+          left: 0;
+          top: 0;
+          width: 100%; /* Full width */
+          height: 100%; /* Full height */
+          overflow: auto; /* Enable scroll if needed */
+          background-color: rgb(0,0,0); /* Fallback color */
+          background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+        
+        /* Modal Content */
+        .modal-content {
+          background-color: white;
+          margin: auto;
+          padding: 20px;
+          border: 1px solid #888;
+          width: 50%;
+          color: black;
+        }
+        
+        /* The Close Button */
+        .close {
+          color: #aaaaaa;
+          float: right;
+          font-size: 28px;
+          font-weight: bold;
+        }
+        
+        .close:hover,
+        .close:focus {
+          color: #000;
+          text-decoration: none;
+          cursor: pointer;
+        }
+        .close1 {
+          color: #aaaaaa;
+          float: right;
+          font-size: 28px;
+          font-weight: bold;
+        }
+        
+        .close1:hover,
+        .close1:focus {
+          color: #000;
+          text-decoration: none;
+          cursor: pointer;
+        }
+        .close2 {
+          color: #aaaaaa;
+          float: right;
+          font-size: 28px;
+          font-weight: bold;
+        }
+        
+        .close2:hover,
+        .close2:focus {
+          color: #000;
+          text-decoration: none;
+          cursor: pointer;
+        }
+        .close3 {
+          color: #aaaaaa;
+          float: right;
+          font-size: 28px;
+          font-weight: bold;
+        }
+        
+        .close3:hover,
+        .close3:focus {
+          color: #000;
+          text-decoration: none;
+          cursor: pointer;
+        }
+        .close4 {
+          color: #aaaaaa;
+          float: right;
+          font-size: 28px;
+          font-weight: bold;
+        }
+        
+        .close4:hover,
+        .close4:focus {
+          color: #000;
+          text-decoration: none;
+          cursor: pointer;
+        }
+        .close5 {
+          color: #aaaaaa;
+          float: right;
+          font-size: 28px;
+          font-weight: bold;
+        }
+        
+        .close5:hover,
+        .close5:focus {
+          color: #000;
+          text-decoration: none;
+          cursor: pointer;
+        }
+        .button {
+          background-color: blueviolet;
+          border: none;
+          color: white;
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          cursor: pointer;
+          
+        }
+        .butt1
+        {
+            border-color: blueviolet;
+          border: none;
+          color: black;
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          cursor: pointer;
+          background-color: blueviolet;
+        border-radius: 12px;
+        }
+        .butt1:hover
+        {
+            background-color: white;
+        }
+        .butt2
+        {
+            background-color: #4CAF50;
+            border-color:  #826aed;
+          border: none;
+          color: black;
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          cursor: pointer;
+          background-color: #826aed;
+          border-radius: 12px;
+        }
+        .butt2:hover
+        {
+            background-color: white;
+        }
+        .butt3
+        {
+            background-color: #4CAF50;
+            border-color: #c879ff;
+          border: none;
+          color: black;
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          cursor: pointer;
+          background-color: #c879ff;
+        border-radius: 12px;
+        }
+        .butt3:hover
+        {
+            background-color: white;
+        }
+        .butt4
+        {
+            background-color: #4CAF50;
+            border-color: #FFB7FF;
+          border: none;
+          color: black;
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          cursor: pointer;
+          background-color: #FFB7FF;
+        border-radius: 12px;
+        }
+        .butt4:hover
+        {
+            background-color: white;
+        }
+        .butt5
+        {
+            background-color: #4CAF50;
+            border-color:  #CAFF8A;
+          border: none;
+          color: black;
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          cursor: pointer;
+          background-color:  #CAFF8A;
+        border-radius: 12px;
+        }
+        .butt5:hover
+        {
+            background-color: white;
+        }
+        
+        .butt6
+        {
+            background-color: #4CAF50;
+            border-color: #97dffc;
+          border: none;
+          color: black;
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          cursor: pointer;
+          background-color:#97dffc;
+        border-radius: 12px;
+        }
+        .butt6:hover
+        {
+            background-color: white;
+        }
+        .content{
+            text-align: center;
+        }
+        
+        </style>
+    
+
+
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="100">
+
+  <!-- ======= Header ======= -->
+ <%- include('partials/header.ejs') %>
+
+  <!-- ======= Hero Section ======= -->
+ 
+  <section class="sem" style="color: #271435; text-align: center; ">
+    <br>
+
+    <h1>Semesters</h1>
+    <br>
+    <br>
+</section >
+<section class="tl" style="background-color: #f1f3f9;">
+    <br>
+    <br>
+    <br>
+
+    <div class="timeline">
+        <div class="containers left">
+          <div class="content">
+              <h4>Semester 1</h4>
+              <h4>Credits : 21</h4>
+            <button class="butt1" id="myBtn">Check Courses</button>
+            <div id="myModal" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                  <span class="close">&times;</span>
+                  <p>Semester 1 Courses</p>
+                  <a href="#" class="button">Linear Algebra and Calculus</a>
+                  <a href="#" class="button">Vector Calculus</a>
+                  <a href="#" class="button">Physics</a>
+                  <a href="#" class="button">Chemistry</a>
+                  <a href="#" class="button">Mechanical Engineering</a>
+                </div>                  
+            </div>
+          </div>
+        </div>
+        <div class="containers right">
+          <div class="content" style="background-color: #826aed;">
+            <h4>Semester 2</h4>
+              <h4>Credits : 23</h4>
+            <button class="butt2" id="myBtn1">Check Courses</button>
+            <div id="myModal1" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                  <span class="close1">&times;</span>
+                  <p>Semester 2 Courses</p>
+                  <a href="#" class="button">Civil Engineering</a>
+                  <a href="#" class="button">Bussiness Economics</a>
+                  <a href="#" class="button">Mathematics</a>
+                  <a href="#" class="button">Biochemistry</a>
+                  <a href="#" class="button">Commerce</a>
+                </div>                  
+            </div>
+          </div>
+        </div>
+        <div class="containers left">
+            <div class="content" style="background-color: #c879ff;">
+                <h4>Semester 3</h4>
+              <h4>Credits : 28</h4>
+                <button class="butt3" id="myBtn2">Check Courses</button>
+                <div id="myModal2" class="modal">
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                      <span class="close2">&times;</span>
+                      <p>Semester 3 Courses</p>
+                      <a href="#" class="button">Civil Engineering</a>
+                     <a href="#" class="button">Bussiness Economics</a>
+                     <a href="#" class="button">Mathematics</a>
+                     <a href="#" class="button">Biochemistry</a>
+                     <a href="#" class="button">Commerce</a>
+                    </div>                  
+                </div>
+            </div>
+          </div>
+          <div class="containers right">
+            <div class="content" style="background-color: #FFB7FF;">
+                <h4>Semester 4</h4>
+              <h4>Credits : 26</h4>
+                <button class="butt4" id="myBtn3">Check Courses</button>
+            <div id="myModal3" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                  <span class="close3">&times;</span>
+                  <p>Semester 4 Courses</p>
+                  <a href="#" class="button">Civil Engineering</a>
+                     <a href="#" class="button">Bussiness Economics</a>
+                     <a href="#" class="button">Mathematics</a>
+                     <a href="#" class="button">Biochemistry</a>
+                     <a href="#" class="button">Commerce</a>
+                </div>                  
+            </div>
+            </div>
+          </div>
+          <div class="containers left">
+            <div class="content" style="background-color: #CAFF8A;">
+                <h4>Semester 5</h4>
+              <h4>Credits : 24</h4>
+                <button class="butt5" id="myBtn4">Check Courses</button>
+                <div id="myModal4" class="modal">
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                      <span class="close4">&times;</span>
+                      <p>Semester 5 Courses</p>
+                      <a href="#" class="button">Civil Engineering</a>
+                     <a href="#" class="button">Bussiness Economics</a>
+                     <a href="#" class="button">Mathematics</a>
+                     <a href="#" class="button">Biochemistry</a>
+                     <a href="#" class="button">Commerce</a>
+                    </div>                  
+                </div>
+            </div>
+          </div>
+          <div class="containers right">
+            <div class="content" style="background-color: #97dffc;">
+                <h4>Semester 1</h4>
+              <h4>Credits : 21</h4>
+                <button class="butt6" id="myBtn5">Check Courses</button>
+            <div id="myModal5" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                  <span class="close5">&times;</span>
+                  <p>Semester 6 Courses</p>
+                  <a href="#" class="button">Civil Engineering</a>
+                     <a href="#" class="button">Bussiness Economics</a>
+                     <a href="#" class="button">Mathematics</a>
+                     <a href="#" class="button">Biochemistry</a>
+                     <a href="#" class="button">Commerce</a>
+                </div>                  
+            </div>
+            </div>
+          </div>
+      </div>
+</section>
+
+<br><br><br>
+<script>
+    // Get the modal
+    var modal = document.getElementById("myModal");
+    var modal1 = document.getElementById("myModal1");
+    var modal2 = document.getElementById("myModal2");
+    var modal3 = document.getElementById("myModal3");
+    var modal4 = document.getElementById("myModal4");
+    var modal5 = document.getElementById("myModal5");
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+    var btn1 = document.getElementById("myBtn1");
+    var btn2 = document.getElementById("myBtn2");
+    var btn3 = document.getElementById("myBtn3");
+    var btn4 = document.getElementById("myBtn4");
+    var btn5 = document.getElementById("myBtn5");
+
+
+    
+    
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+    var span1 = document.getElementsByClassName("close1")[0];
+    var span2 = document.getElementsByClassName("close2")[0];
+    var span3 = document.getElementsByClassName("close3")[0];
+    var span4 = document.getElementsByClassName("close4")[0];
+    var span5 = document.getElementsByClassName("close5")[0];
+
+    
+    // When the user clicks the button, open the modal 
+    btn.onclick = function() {
+      modal.style.display = "block";
+    }
+    btn1.onclick = function() {
+      modal1.style.display = "block";
+    }
+    btn2.onclick = function() {
+      modal2.style.display = "block";
+    }
+    btn3.onclick = function() {
+      modal3.style.display = "block";
+    }
+    btn4.onclick = function() {
+      modal4.style.display = "block";
+    }
+    btn5.onclick = function() {
+      modal5.style.display = "block";
+    }
+    
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+    span1.onclick = function() {
+      modal1.style.display = "none";
+    }
+    span2.onclick = function() {
+      modal2.style.display = "none";
+    }
+    span3.onclick = function() {
+      modal3.style.display = "none";
+    }
+    span4.onclick = function() {
+      modal4.style.display = "none";
+    }
+    span5.onclick = function() {
+      modal5.style.display = "none";
+    }
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+    window.onclick = function(event) {
+      if (event.target == modal1) {
+        modal1.style.display = "none";
+      }
+    }
+    window.onclick = function(event) {
+      if (event.target == modal2) {
+        modal2.style.display = "none";
+      }
+    }
+    window.onclick = function(event) {
+      if (event.target == modal3) {
+        modal3.style.display = "none";
+      }
+    }
+    window.onclick = function(event) {
+      if (event.target == modal4) {
+        modal4.style.display = "none";
+      }
+    }
+    window.onclick = function(event) {
+      if (event.target == modal5) {
+        modal5.style.display = "none";
+      }
+    }
+    </script>
+ 
+
+  <!-- ======= Footer ======= -->
+  <%- include('partials/footer.ejs') %>
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

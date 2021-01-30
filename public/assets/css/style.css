@@ -49,7 +49,7 @@ section {
   letter-spacing: 1px;
   font-weight: 700;
   margin: 0;
-  color: #4154f1;
+  color: black;
   text-transform: uppercase;
 }
 
@@ -59,7 +59,7 @@ section {
   font-size: 38px;
   line-height: 42px;
   font-weight: 700;
-  color: #012970;
+  color: black;
 }
 
 @media (max-width: 768px) {
@@ -172,7 +172,7 @@ section {
 }
 
 .header.header-scrolled {
-  background: #fff;
+  
   padding: 15px 0;
   box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);
 }
@@ -242,12 +242,15 @@ section {
   margin-left: 5px;
 }
 
-.navbar a:hover, .navbar .active, .navbar li:hover > a {
-  color: #000000;
+.navbar a:hover, .navbar li:hover > a {
+  color: #e78b38;
+}
+.navbar .active{
+  color:white;
 }
 
 .navbar .getstarted {
-  background: #4154f1;
+  background: #e78b38;
   padding: 8px 20px;
   margin-left: 30px;
   border-radius: 4px;
@@ -526,9 +529,9 @@ section {
 }
 
 .about h3 {
-  font-size: 14px;
-  font-weight: 700;
-  color: #4154f1;
+  font-size: 24px;
+  font-weight: 900;
+  color: black;
   text-transform: uppercase;
 }
 
@@ -549,7 +552,7 @@ section {
   border-radius: 4px;
   transition: 0.5s;
   color: #fff;
-  background: #4154f1;
+  background: #826aed;
   box-shadow: 0px 5px 25px rgba(65, 84, 241, 0.3);
 }
 
@@ -728,7 +731,7 @@ section {
 }
 
 .features .feature-icons h3 {
-  color: #012970;
+  color: black;
   font-weight: 700;
   font-size: 32px;
   margin-bottom: 20px;
@@ -749,13 +752,13 @@ section {
   font-size: 20px;
   font-weight: 700;
   margin: 0 0 10px 0;
-  color: #012970;
+  color:black;
 }
 
 .features .feature-icons .content .icon-box i {
   font-size: 44px;
   line-height: 44px;
-  color: #0245bc;
+  color:#826aed;
   margin-right: 15px;
 }
 
@@ -763,6 +766,10 @@ section {
   font-size: 15px;
   color: #848484;
 }
+/* Backgrounddddd */
+
+
+/* Backgroundddd end */
 
 /*--------------------------------------------------------------
 # Services
@@ -999,7 +1006,7 @@ section {
 }
 
 .pricing .btn-buy:hover {
-  background: #4154f1;
+  background: #826aed;
   color: #fff;
 }
 
@@ -1038,7 +1045,7 @@ section {
 
 .faq .accordion-button:not(.collapsed) {
   background: none;
-  color: #4154f1;
+  color:#826aed;
   border-bottom: 0;
 }
 
@@ -1442,7 +1449,7 @@ section {
   font-weight: 700;
   margin-bottom: 5px;
   font-size: 20px;
-  color: #012970;
+  color: black;
 }
 
 .team .member .member-info span {
@@ -1563,6 +1570,8 @@ section {
   transform: rotate(6deg) scale(1.2);
 }
 
+
+
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
@@ -1575,7 +1584,7 @@ section {
 .contact .info-box i {
   font-size: 38px;
   line-height: 0;
-  color: #4154f1;
+  color: #826aed;
 }
 
 .contact .info-box h3 {
@@ -1659,7 +1668,7 @@ section {
 }
 
 .contact .php-email-form button[type="submit"] {
-  background: #4154f1;
+  background: #826aed;
   border: 0;
   padding: 10px 30px;
   color: #fff;
@@ -2216,7 +2225,7 @@ section {
   padding: 0;
   line-height: 1;
   font-weight: 700;
-  color: #012970;
+  color: #826aed;
 }
 
 .footer .footer-newsletter form {
@@ -2244,14 +2253,14 @@ section {
   font-size: 16px;
   padding: 0 30px;
   margin: 3px;
-  background: #4154f1;
+  background:#826aed;
   color: #fff;
   transition: 0.3s;
   border-radius: 4px;
 }
 
 .footer .footer-newsletter form input[type="submit"]:hover {
-  background: #5969f3;
+  background: #826aed;
 }
 
 .footer .footer-top {
