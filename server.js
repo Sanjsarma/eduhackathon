@@ -13,7 +13,7 @@ const app=express();
 const conn=mysql.createConnection({
     host:'localhost',
     user: 'root',
-    password: '',
+    password: 'sanjana123',
     database: 'eduhack'
 })
 app.use(express.static('public'));
