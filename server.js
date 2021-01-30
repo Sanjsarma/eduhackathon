@@ -9,11 +9,13 @@ const session=require('express-session');
 var Strategy = require('passport-local').Strategy;
 var dashboard = require('./routes/userdashboard');
 var insertcourses = require('./routes/insertcourses');
+var courses = require('./routes/courses');
+
 const app=express();
 const conn=mysql.createConnection({
     host:'localhost',
     user: 'root',
-    password: 'sanjana123',
+    password: '12345',
     database: 'eduhack'
 })
 app.use(express.static('public'));
@@ -160,6 +162,7 @@ passport.use(
 app.use('/', dashboard );
 app.use('/',insertcourses);
 
+app.use('/', courses );
 //Serialize the user
 passport.serializeUser(function(user, done) {
   done(null, user.id);

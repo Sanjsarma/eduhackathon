@@ -10,13 +10,25 @@
   <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
-</body>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+            <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+    
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
   <style>
     body{
         margin-top:20px;
         color: #1a202c;
         text-align: left;
-        background-color: #e2e8f0;    
+          
     }
     .main-body {
         padding: 15px;
@@ -87,7 +99,7 @@
           Userdata.forEach(function(data){
           {
           %>
-        
+         
               <div class="row gutters-sm">
                 <div class="col-md-4 mb-3">
                   <div class="card">
@@ -108,61 +120,89 @@
                   <div class="card mb-3">
                     <div class="card-body">
                       <div class="row">
-                        <div class="col-sm-3">
-                          <h6 class="mb-0" style = "    font-size: 1.5Rem;">Full Name</h6>
-                        </div>
-                        <div class="col-sm-9 text-secondary">
-                          <%= data.name %>
-                        </div>
+                       
+                  <table class="table table-striped">
+                    <thead>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><b>Full Name</b></td>
+                        <td> <%= data.name %></td>
+                        <td> <button class="btn btn-info btn-md" style = "font-size: 1.5rem; " data-toggle="modal" data-target="#exampleModalCenter" > Edit </button></td>
+                         <div class="modal fade" id="exampleModalCenter" style ="padding-right: 0;" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered"  style = " margin: -200px;" role="document">
+            <div class="modal-content">
+              <div class="modal-header"style="    background-color: rgb(9, 117 ,105);">
+                <h5 class="modal-title" id="exampleModalCenterTitle" style = "font-size: x-large;margin-left: 24%; color:whitesmoke;"><b>Edit Phone number</b></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                  <div class="container1" align="center" >
+                      <div id="login-row" class="row justify-content-center align-items-center" style ="    width: 75%;">
+                          <div id="login-column" class="col-md-12" style ="    font-size: 2rem;">
+                              <div id="login-box" style="height: auto;"  class="col-md" >
+                                  <form id="login-form" class="form" action="/changename" method="post" enctype='application/x-www-form-urlencoded'>
+                                     
+                                  
+                                    
+                                      <div class="form-group">
+                                          <label  class="text-info" style="    margin-left: 5%;">Enter the name :</label><br>
+                                          <input type="tel" style="font-size: 1.5rem;" name="name" class="form-control">
+                                      </div>
+                                  
+                                      <div class="form-group1" >
+                                          <input align ="center" style="font-size: 1.5rem;margin-right: 4%;" type="submit" name="submit" class="btn btn-info btn-md" value="submit">
+                                      </div>
+                                  </form>
+                              </div>
+                          </div>
                       </div>
-                      <hr>
-                      <div class="row">
-                        <div class="col-sm-3">
-                          <h6 class="mb-0"  style = "    font-size: 1.5Rem;">Branch</h6>
-                        </div>
-                        <div class="col-sm-9 text-secondary">
-                          <%= data.branchid %>
-                        </div>
-                      </div>
-                      <hr>
-                      <div class="row">
-                        <div class="col-sm-3">
-                          <h6 class="mb-0"  style = "    font-size: 1.5Rem;">Semester</h6>
-                        </div>
-                        <div class="col-sm-9 text-secondary">
-                          <%=data.sem %>
-                        </div>
-                      </div>
-                      <hr>
-                      <div class="row">
-                        <div class="col-sm-3">
-                          <h6 class="mb-0" style = "    font-size: 1.5Rem;">College</h6>
-                        </div>
-                        <div class="col-sm-9 text-secondary">
-                          <%= data.college %>
-                        </div>
-                      </div>
-                      <hr>
-                      <div class="row">
-                        <div class="col-sm-3">
-                          <h6 class="mb-0" style = "    font-size: 1.5Rem;">Email</h6>
-                        </div>
-                        <div class="col-sm-9 text-secondary">
-                          <%= data.email %>
-                        </div>
-                      </div>
-                    </div>
                   </div>
-                 
+              </div>
+             
+            </div>
+          </div>
+        </div>
+                      </tr>
+                      <tr>
+            
+                        <td><b>Branch</b></td>
+                        <td> <%= data.branchid %></td>
+                        <td> <button class="btn btn-info btn-md" style = "font-size: 1.5rem; " data-toggle="modal" data-target="#exampleModalCenter3" > Edit </button></td>
+                      </tr>
+                      <tr>
+                       
+                        <td><b>Semester</b></td>
+                        <td><%= data.sem %></td>
+                        <td> <button class="btn btn-info btn-md" style = "font-size: 1.5rem; " data-toggle="modal" data-target="#exampleModalCenter4" > Edit </button></td>
+                      </tr>
+                      <tr>
+                        
+                        <td>College</td>
+                        <td><%= data.college %></td>
+                        <td> <button class="btn btn-info btn-md" style = "font-size: 1.5rem; " data-toggle="modal" data-target="#exampleModalCenter5" > Edit </button></td>
+                      </tr>
+                      <tr>
+                     
+                        <td>Email</td>
+                        <td><%= data.email %></td>
+                        <td> <button class="btn btn-info btn-md" style = "font-size: 1.5rem; " data-toggle="modal" data-target="#exampleModalCenter2" > Edit </button></td>
+                      </tr>
+                    </tbody>
+                  </table>
                   </div>
                 </div>
               </div>
               <% } })%>
               <% } %>
+
+              
             </div>
         </div>
    
-        
+       
   </section><!-- End Hero -->
   <section id="courses" class="pricing">
 
@@ -177,82 +217,192 @@
       coursedata.forEach(function(data){
       {
       %>
-      <div class="row gy-4" data-aos="fade-left">
+     
 
-        <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+        <div class="col-lg-4 col-md-4" data-aos="zoom-in" data-aos-delay="100">
           <div class="box">
             <div class="price" style="color: #1e0b4e;"><sup><%=data.cname%></sup></div>
             <img src="http://localhost:8000/images/<%=data.link %>" class="img-fluid" alt="">
             <ul>
               <li><%=data.courseid%></li>
             </ul>
-            <a href="#" class="btn-buy">Click here</a>
+            <form action="/course" method="post">
+              <button name="course" value="<%=data.courseid%>">Go to Resources</button>
+</form>
           </div>
         </div>
+        
 
-        <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
-          <div class="box">
-            <span class="featured">Featured</span>
-            <h3 style="color: #65c600;">Starter Plan</h3>
-            <div class="price"><sup>$</sup>19<span> / mo</span></div>
-            <img src="assets/img/pricing-starter.png" class="img-fluid" alt="">
-            <ul>
-              <li>Aida dere</li>
-              <li>Nec feugiat nisl</li>
-              <li>Nulla at volutpat dola</li>
-              <li>Pharetra massa</li>
-              <li class="na">Massa ultricies mi</li>
-            </ul>
-            <a href="#" class="btn-buy">Buy Now</a>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="300">
-          <div class="box">
-            <h3 style="color: #ff901c;">Business Plan</h3>
-            <div class="price"><sup>$</sup>29<span> / mo</span></div>
-            <img src="assets/img/pricing-business.png" class="img-fluid" alt="">
-            <ul>
-              <li>Aida dere</li>
-              <li>Nec feugiat nisl</li>
-              <li>Nulla at volutpat dola</li>
-              <li>Pharetra massa</li>
-              <li>Massa ultricies mi</li>
-            </ul>
-            <a href="#" class="btn-buy">Buy Now</a>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="400">
-          <div class="box">
-            <h3 style="color: #ff0071;">Ultimate Plan</h3>
-            <div class="price"><sup>$</sup>49<span> / mo</span></div>
-            <img src="assets/img/pricing-ultimate.png" class="img-fluid" alt="">
-            <ul>
-              <li>Aida dere</li>
-              <li>Nec feugiat nisl</li>
-              <li>Nulla at volutpat dola</li>
-              <li>Pharetra massa</li>
-              <li>Massa ultricies mi</li>
-            </ul>
-            <a href="#" class="btn-buy">Buy Now</a>
-          </div>
-        </div>
-
-      </div>
+       
       <% } }) } else { %>
         <h1>No courses</h1>
         <% } %>
     </div>
 
   </section>
-  
+  <div class="modal fade" id="exampleModalCenter5" style ="padding-right: 0;" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered"  style = " margin: -200px;" role="document">
+      <div class="modal-content">
+        <div class="modal-header"style="    background-color: rgb(9, 117 ,105);">
+          <h5 class="modal-title" id="exampleModalCenterTitle" style = "font-size: x-large;margin-left: 34%; color:whitesmoke;"><b>Edit College</b></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="container1" align="center" >
+                <div id="login-row" class="row justify-content-center align-items-center" style ="    width: 75%;">
+                    <div id="login-column" class="col-md-12" style ="    font-size: 2rem;">
+                        <div id="login-box" style="height: auto;"  class="col-md" >
+                            <form id="login-form" class="form" action="/changecollege
+                            " method="post" enctype='application/x-www-form-urlencoded'>
+                               
+                            
+                              
+                                <div class="form-group">
+                                    <label  class="text-info" style="    margin-left: 5%;">Enter your College:</label><br>
+                                    <input type="text" style="font-size: 1.5rem;" name="email" class="form-control">
+                                </div>
+                            
+                                <div class="form-group1" >
+                                    <input align ="center" style="font-size: 1.5rem;margin-right: 4%;" type="submit" name="submit" class="btn btn-info btn-md" value="submit">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="exampleModalCenter2" style ="padding-right: 0;" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered"  style = " margin: -200px;" role="document">
+      <div class="modal-content">
+        <div class="modal-header"style="    background-color: rgb(9, 117 ,105);">
+          <h5 class="modal-title" id="exampleModalCenterTitle" style = "font-size: x-large;margin-left: 34%; color:whitesmoke;"><b>Edit Email</b></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="container1" align="center" >
+                <div id="login-row" class="row justify-content-center align-items-center" style ="    width: 75%;">
+                    <div id="login-column" class="col-md-12" style ="    font-size: 2rem;">
+                        <div id="login-box" style="height: auto;"  class="col-md" >
+                            <form id="login-form" class="form" action="/changemail" method="post" enctype='application/x-www-form-urlencoded'>
+                               
+                            
+                              
+                                <div class="form-group">
+                                    <label  class="text-info" style="    margin-left: 5%;">Enter the new email:</label><br>
+                                    <input type="email" style="font-size: 1.5rem;" name="email" class="form-control">
+                                </div>
+                            
+                                <div class="form-group1" >
+                                    <input align ="center" style="font-size: 1.5rem;margin-right: 4%;" type="submit" name="submit" class="btn btn-info btn-md" value="submit">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+      </div>
+    </div>
+  </div>
   <!--
 </section>
   <main id="main">
     <!-- ======= About Section ======= -->
-    
-      
+    <div class="modal fade" id="exampleModalCenter3" style ="padding-right: 0;" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered"  style = " margin: -200px;" role="document">
+        <div class="modal-content">
+          <div class="modal-header"style="    background-color: rgb(9, 117 ,105);">
+            <h5 class="modal-title" id="exampleModalCenterTitle" style = "font-size: x-large;margin-left: 34%; color:whitesmoke;"><b>Edit branch : </b></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+              <div class="container1" align="center" >
+                  <div id="login-row" class="row justify-content-center align-items-center" style ="    width: 75%;">
+                      <div id="login-column" class="col-md-12" style ="    font-size: 2rem;">
+                          <div id="login-box" style="height: auto;"  class="col-md" >
+                              <form id="login-form" class="form" action="/changebranch" method="post" enctype='application/x-www-form-urlencoded'>
+                                 
+                              
+                                <label>Branch  : </label>
+                                  <div class="form-group">
+                                    <select id="cars" name="branch">
+                                      <option value=1>CS</option>
+                                      <option value=2>ECE</option>
+                                      <option value=3>EEE</option>
+                                      <option value=4>MECH</option>
+                                      <option value=5>BME</option>
+                                      <option value=6>IT</option>
+                                    </select>
+                                  </div>
+                              
+                                  <div class="form-group1" >
+                                      <input align ="center" style="font-size: 1.5rem;margin-right: 4%;" type="submit" name="submit" class="btn btn-info btn-md" value="submit">
+                                  </div>
+                              </form>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+         
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="exampleModalCenter4" style ="padding-right: 0;" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered"  style = " margin: -200px;" role="document">
+        <div class="modal-content">
+          <div class="modal-header"style="    background-color: rgb(9, 117 ,105);">
+            <h5 class="modal-title" id="exampleModalCenterTitle" style = "font-size: x-large;margin-left: 34%; color:whitesmoke;"><b>Edit Sem : </b></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+              <div class="container1" align="center" >
+                  <div id="login-row" class="row justify-content-center align-items-center" style ="    width: 75%;">
+                      <div id="login-column" class="col-md-12" style ="    font-size: 2rem;">
+                          <div id="login-box" style="height: auto;"  class="col-md" >
+                              <form id="login-form" class="form" action="/changesem" method="post" enctype='application/x-www-form-urlencoded'>
+                                 
+                              
+                                <label>Semester  : </label>
+                                  <div class="form-group">
+                                    <select id="cars" name="branch">
+                                      <option value=1>1</option>
+                                      <option value=2>2</option>
+                                      <option value=3>3</option>
+                                      <option value=4>4</option>
+                                      <option value=5>5</option>
+                                      <option value=6>6</option>
+                                      <option value=6>7</option>
+                                      <option value=6>8</option>
+                                    </select>
+                                  </div>
+                              
+                                  <div class="form-group1" >
+                                      <input align ="center" style="font-size: 1.5rem;margin-right: 4%;" type="submit" name="submit" class="btn btn-info btn-md" value="submit">
+                                  </div>
+                              </form>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+         
+        </div>
+      </div>
+    </div>
 
   </main><!-- End #main -->
 

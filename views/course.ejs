@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('partials/head.ejs')%>
+<!-- Vendor JS Files -->
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+<script src="assets/vendor/aos/aos.js"></script>
+<script src="assets/vendor/php-email-form/validate.js"></script>
+<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="assets/vendor/purecounter/purecounter.js"></script>
+<script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+
+<!-- Template Main JS File -->
+<script src="assets/js/main.js"></script>
+
+
+<!------ Include the above in your HEAD tag ---------->
+
+<style>
+  .pb-video-container {
+    padding-top: 20px;
+    background: #bdc3c7;
+    font-family: Lato;
+}
+
+.pb-video {
+    border: 1px solid #e6e6e6;
+    padding: 5px;
+}
+
+    .pb-video:hover {
+        background: #2c3e50;
+    }
+
+.pb-video-frame {
+    transition: width 2s, height 2s;
+}
+
+    .pb-video-frame:hover {
+        height: 300px;
+    }
+
+.pb-row {
+    margin-bottom: 10px;
+}
+  .books .container
+{
+  max-width: 1000px;
+  margin: 100px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.books .card
+{
+  position: relative;
+  margin: 20px 0;
+  width: 300px;
+  height: 400px;
+  background: #fff;
+  transform-style: preserve-3d;
+  transform: perspective(2000px);
+  box-shadow: inset 300px 0 50px rgba(0,0,0,.5), 0 20px 20px rgba(0,0,0,.5);
+  transition: 1s;
+}
+.books .card:hover
+{
+  z-index: 10000;
+  transform: perspective(2000px) rotate(-10deg);
+  box-shadow: inset 20px 0 50px rgba(0,0,0,.5), 0 10px 100px rgba(0,0,0,.5);
+}
+
+.books .card .Box
+{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #000;
+  box-sizing: border-box;
+  position: relative;
+  transform-origin: left;
+  z-index: 1;
+  transition: 1s cubic-bezier(.15,1.7,.84,.58);
+  background: #111;
+}
+.books .card .Box img
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.books .card:hover .Box
+{
+  transform: rotateY(-135deg);
+}
+.books .card .details
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  padding: 20px;
+  z-index: -1;
+}
+  @import url('https://fonts.googleapis.com/css?family=Muli:300,400,700,900');
+
+    button{
+      width: 25%;
+    }
+  
+  .buttons > button{
+    margin-right: 50px;
+    margin-top:25px;
+  }
+  
+  .btn-gradient{
+  
+      color: white;
+      border-radius: 12px;
+      padding: 12px 48px;
+      box-shadow: 0 6px 30px -10px #4a74c9;
+      transition: all 0.5s ease;
+      border: 0;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      background: blueviolet;
+  }
+  
+  .btn-gradient:hover{
+    box-shadow: 0 0px 0px 0 rgba(0, 40, 120, 0);
+    transform: scale(0.930);
+  }
+  
+  .gradient2{
+    background-image: linear-gradient(60deg, #4aa5fb 10%, #1ccafa 50%, #00e1f9 100%);
+  border-top-left-radius: 20px;
+      border-top-right-radius: 0px;
+      border-bottom-right-radius: 20px;
+      border-bottom-left-radius: 0px;
+  }
+  
+  .gradient2:hover{
+  border-top-left-radius: 0px;
+      border-top-right-radius: 12px;
+      border-bottom-right-radius: 0px;
+      border-bottom-left-radius: 12px;
+  }
+  
+  .gradient3{
+    background-image: linear-gradient(60deg, #8c38fe 10%, #b72ee4 50%, #9c66e5 100%);
+    box-shadow: 0 2px 25px 0 rgba(111, 30, 138, .35);
+  }
+  
+  .gradient3:hover{
+    box-shadow: 0 10px 30px #8c38fe, 0 5px 0 0 #9c66e5;
+      transform: translateY(-5px);
+  }
+  
+  .gradient4{
+    background-image: linear-gradient(60deg, #43fa84 10%, #3afec0 50%, #38fee3 100%);
+    box-shadow: 0 2px 25px 0 rgba(56, 254, 227, .35);
+  }
+  
+  .gradient4:hover{
+   box-shadow: 0px 10px 12px 0px #48f184b5, 0px 8px 2px 0 #57b396;
+   transform: rotateX(50deg);
+  }
+  .trial {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background: #f1f3f9;
+    font-family: "Muli", Arial, sans-serif;
+  }
+</style>
+
+</head>
+
+<body >
+
+  <!-- ======= Header ======= -->
+ <%- include('partials/header.ejs') %>
+
+  <!-- ======= Hero Section ======= -->
+  
+
+
+
+  <main id="main">
+    <!-- ======= About Section ======= -->
+    <section style="    margin-top: 5%; padding-bottom: 0;">
+        <div class="row">
+            <div class="col">
+              <div class="jumbotron">
+                <h1 class="display-2"><%- cid %> - <%- cname %> </h1>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+                  Syllabus
+                </button>
+              </div>
+            </div>
+          </div>
+      </section>
+     
+        
+       
+        
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+          <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Syllabus</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <iframe  style ="    margin-left: 10%;" src= "<%= syllabus %>" width="640" height="480"></iframe>
+              </div>
+           
+            </div>
+          </div>
+        </div>
+   
+     <section class="trial">
+      <header class="section-header">
+        <h2>Notes</h2>
+        <p>Detailed Notes</p>
+      </header>
+      
+      <div class="buttons">
+        <button  class="btn btn-gradient"> <a  href= "<%= note[0] %> " style="color:white;" >Module 1</a> </button>
+       <button class="btn btn-gradient "><a href= "<%= note[1] %> "  style="color:white;" >Module 2</a>  </button>
+       <button  class="btn btn-gradient "><a href= "<%= note[2] %> "  style="color:white;" >Module 3 </a> </button>
+       <button  class="btn btn-gradient"><a href= "<%= note[3] %> "  style="color:white;" >Module 4 </a>  </button>
+       <button  class="btn btn-gradient"><a href= "<%= note[4] %> "  style="color:white;" >Module 5</a></button>
+       <button class="btn btn-gradient"> <a href= "<%= note[5] %> "  style="color:white;" >Module 6 </a> </button>
+   
+      </div>
+      </section>
+      <br>
+      <br>
+      <section class="trial">
+     
+        <div class="buttons">
+          <button  class="btn btn-gradient"> <a  href= "<%= tp[0] %> " style="color:white;" >Module 1</a> </button>
+         <button class="btn btn-gradient "><a href= "<%= tp[1] %> "  style="color:white;" >Module 2</a>  </button>
+         <button  class="btn btn-gradient "><a href= "<%= tp[2] %> "  style="color:white;" >Module 3 </a> </button>
+         <button  class="btn btn-gradient"><a href= "<%= tp[3] %> "  style="color:white;" >Module 4 </a>  </button>
+         <button  class="btn btn-gradient"><a href= "<%= tp[4] %> "  style="color:white;" >Module 5</a></button>
+         <button class="btn btn-gradient"> <a href= "<%= tp[5] %> "  style="color:white;" >Module 6 </a> </button>
+     
+        </div>
+        <header class="section-header">
+          <h2>T.P</h2>
+          <p>Solved Module Questions</p>
+        </header>
+        
+        </section>
+        <section class="video">
+          <div class="container-fluid pb-video-container">
+            <div class="col-md-10 offset-md-1">
+                <h3 class="text-xs-center">Guest Lectures </h3>
+                <div class="row pb-row">
+                    <div class="col-md-4 pb-video">
+                        <iframe class="pb-video-frame" width="100%" height="230" src="<%= video[0] %>" frameborder="0" allowfullscreen></iframe>
+                       
+                    </div>
+                    <div class="col-md-4 pb-video">
+                        <iframe class="pb-video-frame" width="100%" height="230" src= "<%= video[1] %>" frameborder="0" allowfullscreen></iframe>
+                        
+                    </div>
+                    <div class="col-md-4 pb-video">
+                        <iframe class="pb-video-frame " width="100%" height="230" src= "<%= video[2] %>" frameborder="0" allowfullscreen></iframe>
+                        
+                    </div>
+                   
+                </div>
+                <div class="row pb-row">
+                    <div class="col-md-4 pb-video">
+                        <iframe class="pb-video-frame" width="100%" height="230" src= "<%= video[3] %>"  frameborder="0" allowfullscreen></iframe>
+                        
+                    </div>
+                    <div class="col-md-4 pb-video">
+                        <iframe class="pb-video-frame" width="100%" height="230" src= "<%= video[4] %>"  frameborder="0" allowfullscreen></iframe>
+                        
+                    </div>
+                    <div class="col-md-4 pb-video">
+                        <iframe class="pb-video-frame" width="100%" height="230" src= "<%= video[5] %>"  frameborder="0" allowfullscreen></iframe>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        </section>
+        <section class="books">
+          <header class="section-header">
+            <p>Text Books</p>
+          </header>
+          <div class="container">
+            <div class="card">
+              <div class="Box">
+                <img src="<%= tb[0].img_url %>">
+              </div>
+              <div class="details">
+                <h2><%= tb[0].t_name %></h2>
+                <button><a href= "<%= tb[0].link %>"> Read </a></button>
+              </div>
+            </div>
+            <div class="card">
+              <div class="Box">
+                <img src="<%= tb[1].img_url %>">
+              </div>
+              <div class="details">
+                <h2><%= tb[1].t_name %></h2>
+                <button><a href= "<%= tb[1].link %>"> Read </a></button>
+              </div>
+            </div>
+            
+          </div>
+          <section class="trial">
+     
+            <div class="buttons">
+              <button  class="btn btn-gradient"> <a  href= "<%= qp[0] %> " style="color:white;" >Question Paper 1</a> </button>
+             <button class="btn btn-gradient "><a href= "<%= qp[1] %> "  style="color:white;" >Question Paper  2</a>  </button>
+             <button  class="btn btn-gradient "><a href= "<%= qp[2] %> "  style="color:white;" >Question Paper  3 </a> </button>
+             <button  class="btn btn-gradient"><a href= "<%= qp[3] %> "  style="color:white;" >Question Paper  4 </a>  </button>
+             <button  class="btn btn-gradient"><a href= "<%= qp[4] %> "  style="color:white;" >Question Paper  5</a></button>
+            
+         
+            </div>
+            <header class="section-header">
+             
+              <p>Question Papers</p>
+            </header>
+        </section>
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <%- include('partials/footer.ejs') %>
+
+  
+  
+
+</body>
+
+</html>
