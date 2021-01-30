@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script> 
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+  <%- include('partials/head.ejs')%>
+  <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+</body>
+  <style>
+    body{
+        margin-top:20px;
+        color: #1a202c;
+        text-align: left;
+        background-color: #e2e8f0;    
+    }
+    .main-body {
+        padding: 15px;
+    }
+    .card {
+        box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.06);
+    }
+    
+    .card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        background-color: #fff;
+        background-clip: border-box;
+        border: 0 solid rgba(0,0,0,.125);
+        border-radius: .25rem;
+    }
+    
+    .card-body {
+        flex: 1 1 auto;
+        min-height: 1px;
+        padding: 1rem;
+    }
+    
+    .gutters-sm {
+        margin-right: -8px;
+        margin-left: -8px;
+    }
+    
+    .gutters-sm>.col, .gutters-sm>[class*=col-] {
+        padding-right: 8px;
+        padding-left: 8px;
+    }
+    .mb-3, .my-3 {
+        margin-bottom: 1rem!important;
+    }
+    
+    .bg-gray-300 {
+        background-color: #e2e8f0;
+    }
+    .h-100 {
+        height: 100%!important;
+    }
+    .shadow-none {
+        box-shadow: none!important;
+    }
+    
+</style>
+
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="100">
+
+  <!-- ======= Header ======= -->
+ <%- include('partials/adminhead.ejs') %>
+
+  <!-- ======= Hero Section ======= -->
+  <br><br><br><br>
+ 
+  <div class="row" id="main" style = "    margin: 2% 2% 2% 2%;    ">
+              
+    <div class="container">
+        <div class="col-sm-12 col-md-12 well" id="content" style="    background-color: #f5f5f56b; margin-top: 1%;    color: #080808;" >
+            <h1 style="text-align: center;"><strong>Welcome to the Materials  Section!</strong></h1>
+        </div>
+       
+        <div class="row" style = "    background-color:white;">
+            <div class="col-md-10 col-md-offset-1">
+    
+                <div class="panel panel-default panel-table" style = "font-size: 1.5rem;">
+                  <div class="panel-heading" style = "background-color:black;
+                  color: white;">
+                    <div class="row">
+                      <div class="col col-xs-6">
+                        <h3 class="panel-title" style = "    font-size: 1.75rem;
+                        margin-top: 1.25%;    "><strong> Video Materials</strong></h3>
+                      </div>
+                      <div class="col col-xs-6 text-right">
+                      
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel-body">
+                    <table class="table table-striped table-bordered table-list">
+                      <thead>
+                        <tr>
+                            <th>Course ID</th>
+                            <th>Module No</th>
+                            <th>Video Link</th>
+                        
+                        </tr> 
+                      </thead>
+                      <tbody>
+                        <%
+                        if(userData.length!=0){
+                        var i=1;
+                        userData.forEach(function(data){
+                        %>
+                        <tr>
+                            <td><%=data.courseid %></td>
+                            <td><%=data.mod_no %></td>
+                            <td><%=data.video_link%></td>
+                           
+                            
+                        </tr>
+                        <%  i++; }) %>
+                        <% } else{ %>
+                            <tr>
+                                <td colspan="7">No Data Found</td>
+                            </tr>
+                        <% } %>
+                            </tbody>
+                    </table>
+                
+                  </div>
+                 
+    
+    </div></div></div>
+  
+<!-- /.container-fluid -->
+</div>
+<div class="container">
+   
+   
+    <div class="row" style = "    background-color:white;">
+        <div class="col-md-10 col-md-offset-1">
+
+            <div class="panel panel-default panel-table" style = "font-size: 1.5rem;">
+              <div class="panel-heading" style = "background-color:black;
+              color: white;">
+                <div class="row">
+                  <div class="col col-xs-6">
+                    <h3 class="panel-title" style = "    font-size: 1.75rem;
+                    margin-top: 1.25%;    "><strong>TP Materials</strong></h3>
+                  </div>
+                  <div class="col col-xs-6 text-right">
+                  
+                  </div>
+                </div>
+              </div>
+              <div class="panel-body">
+                <table class="table table-striped table-bordered table-list">
+                  <thead>
+                    <tr>
+                        <th>Course ID</th>
+                        <th>Module No</th>
+                        <th>TP Link</th>
+                        
+                    
+                    </tr> 
+                  </thead>
+                  <tbody>
+                    <%
+                    if(userData.length!=0){
+                    var i=1;
+                    userData.forEach(function(data){
+                    %>
+                    <tr>
+                        <td><%=data.courseid %></td>
+                        <td><%=data.mod_no %></td>
+                        <td><%= data.Tp_link %></td>
+                     
+                       
+                        
+                    </tr>
+                    <%  i++; }) %>
+                    <% } else{ %>
+                        <tr>
+                            <td colspan="7">No Data Found</td>
+                        </tr>
+                    <% } %>
+                        </tbody>
+                </table>
+            
+              </div>
+             
+
+</div></div></div>
+
+<!-- /.container-fluid -->
+</div>
+<div class="container">
+  
+   
+    <div class="row" style = "    background-color:white;">
+        <div class="col-md-10 col-md-offset-1">
+
+            <div class="panel panel-default panel-table" style = "font-size: 1.5rem;">
+              <div class="panel-heading" style = "background-color:black;
+              color: white;">
+                <div class="row">
+                  <div class="col col-xs-6">
+                    <h3 class="panel-title" style = "    font-size: 1.75rem;
+                    margin-top: 1.25%;    "><strong>Notes Materials</strong></h3>
+                  </div>
+                  <div class="col col-xs-6 text-right">
+                  
+                  </div>
+                </div>
+              </div>
+              <div class="panel-body">
+                <table class="table table-striped table-bordered table-list">
+                  <thead>
+                    <tr>
+                        <th>Course ID</th>
+                        <th>Module No</th>
+                     
+                        <th>Notes Link</th>
+                     
+                    
+                    </tr> 
+                  </thead>
+                  <tbody>
+                    <%
+                    if(userData.length!=0){
+                    var i=1;
+                    userData.forEach(function(data){
+                    %>
+                    <tr>
+                        <td><%=data.courseid %></td>
+                        <td><%=data.mod_no %></td>
+                      
+                        <td><%=data.Notes_link %></td>
+                    
+                       
+                        
+                    </tr>
+                    <%  i++; }) %>
+                    <% } else{ %>
+                        <tr>
+                            <td colspan="7">No Data Found</td>
+                        </tr>
+                    <% } %>
+                        </tbody>
+                </table>
+            
+              </div>
+             
+
+</div></div></div>
+
+<!-- /.container-fluid -->
+</div>
+
+  
+  <!--
+</section>
+  <main id="main">
+    <!-- ======= About Section ======= -->
+    
+      
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <%- include('partials/footer.ejs') %>
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

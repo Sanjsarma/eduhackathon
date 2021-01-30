@@ -83,27 +83,32 @@
 
       <header class="section-header">
         <p>Courses!</p>
+        <p style="font-size: 1.5rem;"><a href ="/insertcourses"><button>Add new Courses</button></a></p>
       </header>
+     
       <%
       if(coursedata.length!=0){
       var i=1;
       coursedata.forEach(function(data){
       {
       %>
+     
 
-        <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+        <div class="col-lg-4 col-md-4" data-aos="zoom-in" data-aos-delay="100">
           <div class="box">
             <div class="price" style="color: #1e0b4e;"><sup><%=data.cname%></sup></div>
             <img src="http://localhost:8000/images/<%=data.link %>" class="img-fluid" alt="">
             <ul>
               <li><%=data.courseid%></li>
             </ul>
-            <a href="#" class="btn-buy">Click here</a>
+            <form action="/course" method="post">
+              <button name="course" value="<%=data.courseid%>">Go to Resources</button>
+</form>
           </div>
         </div>
-
         
-      </div>
+
+       
       <% } }) } else { %>
         <h1>No courses</h1>
         <% } %>

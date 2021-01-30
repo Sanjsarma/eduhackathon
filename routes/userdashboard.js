@@ -4,6 +4,22 @@ const expressLayouts=require('express-ejs-layouts');
 const session=require('express-session');
 var router = express.Router();
 var db=require('../db/data');
+router.get("/materials", function(req, res){
+  var sql='SELECT * FROM materials';
+  db.query(sql, function (err, data, fields) {
+    res.render("materials.ejs",{ userData : data });
+  });
+
+
+    
+
+  
+
+    
+      
+});
+
+
 
 router.get("/dashboard",require('connect-ensure-login').ensureLoggedIn(),
 function(req, res){
