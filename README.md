@@ -20,8 +20,6 @@ Question Papers
 Bookstore to buy textbooks for different semesters
 User-Friendly platform
 
-Link to the remote URL:
-
 Team name: Xtra’s
 Members:
 Ardra
